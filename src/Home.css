@@ -1,0 +1,8 @@
+.home_image {
+width: 100%;
+z-index: 0;
+margin-bottom: -150px;
+/* -webkit-mask-image: -webkit-linear-gradient(to bottom, red, blue); */
+/* mask-image: linear-gradient(to bottom, red, blue); */
+-webkit-mask-image: linear-gradient(to top,transparent 5%, black 70%);
+}
