@@ -1,29 +1,31 @@
 import React from "react"
 import "./Product.css"
-import StarRateIcon from "@material-ui/icons/StarRate";
+import StarTwoToneIcon from '@material-ui/icons/StarTwoTone';
 import { yellow } from "@material-ui/core/colors";
 
-function Product() {
+function Product({title, image, price, rating}) {
     return (
         <div className="product">
+
+            <img src={image} alt={title}/>
+            
             <div className="product_info">
-                <p>Echo 4. Generation</p>
-                <p ClassName="product_price">
-                    <strong>19.99</strong>
+                <p>{title}</p>
+
+                <p className="product_price">
+                    <strong>{price}</strong>
                     <small> <sup>€</sup></small>
-                </p>
+                </p> 
+
                 <div className="product_rating">
                     <div className="product_StarRate">
-                    <StarRateIcon style={{ color: yellow[500]}}/>
-                    <StarRateIcon style={{ color: yellow[500]}}/>
-                    <StarRateIcon style={{ color: yellow[500]}}/>
-                    <StarRateIcon style={{ color: yellow[500]}}/>
-                    <StarRateIcon style={{ color: yellow[500]}}/>
+                        {Array(rating).fill().map((_,i)=>(
+                            <StarTwoToneIcon className="star--filled"/>
+                        ))}
                     </div>
-                </div>
 
+                </div>
             </div>
-            <img src="https://m.media-amazon.com/images/I/71Gb8-pk2VL._AC_UY436_FMwebp_QL65_.jpg" alt="Echo 4.Generation jetzt Kaufen!"/>
 
             <div className="product_button--container"><button className="product_button">In den Einkaufswagen</button>
             </div>
