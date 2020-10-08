@@ -1,7 +1,6 @@
 import React from "react"
 import "./Product.css"
 import StarTwoToneIcon from '@material-ui/icons/StarTwoTone';
-import { yellow } from "@material-ui/core/colors";
 
 function Product({title, image, price, rating}) {
     return (
