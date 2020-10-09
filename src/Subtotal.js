@@ -1,28 +1,42 @@
-import { ShoppingBasket } from '@material-ui/icons';
 import React from 'react'
 import "./Subtotal.css";
+import CurrencyFormat from "react-currency-format";
+import { useStateValue } from "./StateProvider";
 
 function Subtotal() {
+    const [{ basket }] = useStateValue();
+    console.log("BASKET", basket);
+
+    function getTotalOfBasket() {
+        let total = 0;
+        basket.forEach(item => {
+            total += item.price;
+        });
+        return total;
+    };
+
     return (
         <div className="subtotal">
             <CurrencyFormat
                 renderText={(value) =>(
                     <>
                         <p>
-                            Subtotal (0 items):({basket.length} items):
-                            <strong> {`${value}`}</strong>
+                            Subtotal ({basket.length} items):
+                            <strong>{value}</strong>
                         </p>
-                        <small className="subtoal_gift">
+                        <small className="subtotal_gift">
                             <input type="checkbox" /> This order contains a gift
                         </small>
                         </>
                 )} 
                 decimalScale={2}
-                value={getBasketTotal(basket)}
-                displayType={"Text"}
+                value={getTotalOfBasket()}
+                displayType={"text"}
                 thousandSeperator={true}
-                prefix={"€"}
+                // prefix={"€"}
+                suffix={" €"}
             />
+            <button>Proceed to Checkout</button>
         </div>
     )
 }

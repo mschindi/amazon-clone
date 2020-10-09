@@ -17,6 +17,7 @@ function Home() {
                 price={29.99}
                 image="https://m.media-amazon.com/images/I/71Gb8-pk2VL._AC_UY436_FMwebp_QL65_.jpg"
                 rating={5}
+                typeStyling="Startseite"
                 />
 
             {/* Echo Dot 4. Generation | Antrazit */}
@@ -26,6 +27,7 @@ function Home() {
                 price={24.99}
                 image="https://m.media-amazon.com/images/I/71UGFF-EzFL._AC_UY436_FMwebp_QL65_.jpg"
                 rating={5}
+                typeStyling="Startseite"
                 />
             </div>
 
@@ -37,6 +39,7 @@ function Home() {
                 title="Der neue Echo Show 10 (3. Generation)"
                 price={243.69}
                 image="https://images-na.ssl-images-amazon.com/images/I/51fxIcvi3cL._AC_SL1000_.jpg"
+                typeStyling="Startseite"
                 rating={4}
                 />
             {/* Fire Tv Stick mit Alexa 2020*/}
@@ -46,6 +49,7 @@ function Home() {
                 price={38.98}
                 image="https://images-na.ssl-images-amazon.com/images/I/51GF9vRAnFL._AC_SL1000_.jpg"
                 rating={5}
+                typeStyling="Startseite"
                 />
             {/* Echo Studio */}
                 <Product
@@ -54,6 +58,7 @@ function Home() {
                 price={24.99}
                 image="https://images-na.ssl-images-amazon.com/images/I/91Z0cGhaeCL._AC_SL1500_.jpg"
                 rating={5}
+                typeStyling="Startseite"
                 />
             </div>
 
@@ -66,6 +71,7 @@ function Home() {
                 price={116.96}
                 image="https://images-na.ssl-images-amazon.com/images/I/71TnVZ-xTYL._AC_SL1500_.jpg"
                 rating={5}
+                typeStyling="Startseite"
                 />
 
             </div>
