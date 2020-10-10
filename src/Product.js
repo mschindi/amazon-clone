@@ -4,10 +4,9 @@ import StarTwoToneIcon from '@material-ui/icons/StarTwoTone';
 import { useStateValue } from "./StateProvider";
 
 function Product({id, title, image, price, rating}) {
-    const [ { basket, lastAddedItem } , dispatch] = useStateValue();
+    const [ { basket } , dispatch] = useStateValue();
 
     console.log('this is the basket >>>', basket );
-    console.log('last added item:', lastAddedItem);
 
     const addToBasket = () => {
         //dispatch the item into data Layer

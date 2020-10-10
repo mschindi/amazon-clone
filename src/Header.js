@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
 
 function Header() {
-  const [{ basket, lastAddedItem }, dispatch] = useStateValue();
+  const [{ basket }, dispatch] = useStateValue();
   
-  console.log("Header: Last Added Item -> ", lastAddedItem);
+
   
   return (
     <div className="header">
