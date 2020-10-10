@@ -1,19 +1,6 @@
 export const initialState= {
     basket: [
-        {
-            id: "123456789",
-image: "https://m.media-amazon.com/images/I/71Gb8-pk2VL._AC_UY436_FMwebp_QL65_.jpg",
-price: 29.99,
-rating: 5,
-title: "Echo Dot 4. Generation + Uhranzeige | Blaugrau",
-        },
-        {
-            id: "123456789",
-image: "https://m.media-amazon.com/images/I/71Gb8-pk2VL._AC_UY436_FMwebp_QL65_.jpg",
-price: 29.99,
-rating: 5,
-title: "Echo Dot 4. Generation + Uhranzeige | Blaugrau",
-        },
+
     ],
     user: {},
 }
