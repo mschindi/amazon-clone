@@ -1,23 +1,18 @@
-export const initialState= {
-    basket: [
-
-    ],
-    user: {},
+export const initialState = {
+    basket: [],
+    user: {
+        refreshToken:"",
+        email:"",
+    },
+    loggedIn: false,
 }
-
-// export const getTotalBasket = (basket) => {
-//      let total = 0;
-//      basket.forEach(item => {
-//          total += item.price;
-//      });
-//      return total;
-//  };
 
 //Selector
 export const getBasketTotal = (basket) => basket?.reduce((amount,item) => item.price + amount, 0);
 
 const reducer = (state, action) => {
     console.log(action);
+
     switch(action.type) {
         case 'ADD_TO_BASKET':
             return {
@@ -43,6 +38,17 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 basket:newBasket
+            }
+
+        case "LOGGEDIN_USER":
+            console.log(action.type, action.user);
+            return {
+                ...state,
+                user: {
+                    refreshToken: action.user.refreshToken,
+                    email:action.user.email,
+                },
+                loggedIn: true,
             }
 
         default:

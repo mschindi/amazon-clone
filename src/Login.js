@@ -2,22 +2,32 @@ import { Link } from "react-router-dom";
 import React, { useState } from 'react';
 import './Login.css'
 import { auth } from "./firebase";
-
+import { useStateValue } from "./StateProvider";
+import { useHistory } from 'react-router-dom';
 
 function Login() {
+    const history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [ {}, dispatch ] = useStateValue();
     const signIn = e => {
         e.preventDefault();
 
         auth.signInWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-            console.log (userCredential);
+        .then((userCredentials) => {
+            console.log(userCredentials);
+
+            dispatch({
+                type: "LOGGEDIN_USER",
+                user: userCredentials.user,
+            });
+            history.push('/');
         })
         .catch(error => alert(error.message))
-
+    
         //some fancy firebase login  shiiiittt!!!
     }
+
 
     const register = e => {
         e.preventDefault();
