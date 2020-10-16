@@ -30,3 +30,8 @@
   font-size: 17px;
   font-weight: 600;
 }
+
+.star--filled {
+  color: orange;
+  width: 20px;
+}
