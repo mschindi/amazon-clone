@@ -10,6 +10,7 @@ import { useStateValue } from "./StateProvider";
 import Payment from "./Payment";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
+import Orders from "./Orders";
 
 //import logo from './logo.svg';
 
@@ -47,9 +48,12 @@ useEffect(() => {
     <Router>
     <div className="app">
       <Switch>
-        <Route path="/login">
-          <Login />
-          <h1>Login page</h1>
+        <Route path="/orders">
+          <Header />
+          <Orders />
+          </Route>
+          <Route path="/login">
+            <Login />
           </Route>
           <Route path="/checkout">
             <Header />

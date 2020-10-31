@@ -36,18 +36,21 @@ function Header() {
         <Link to={!user && "/login"}>
         <div onClick={ handleAuthentication } className="header_option">
           {/* user?.email ||"Guest" */}
-          <span className="header_optionLineOne">Hello {!user ? 'Guest' : user.email}</span>
-  <span className="header_optionLineTwo">{ user ? 'Sign Out' : 'Sign In' }</span>
+          <span className="header_optionLineOne">Hallo {!user ? ', lieber Gast' : user.email}</span>
+  <span className="header_optionLineTwo">{ user ? 'Abmelden' : 'Anmelden' }</span>
         </div>
         </Link>
 
+        <Link to='/orders'>
         <div className="header_option">
-          <span className="header_optionLineOne">Returns</span>
-          <span className="header_optionLineTwo">& Orders</span>
+          <span className="header_optionLineOne">Warenrücksendungen</span>
+          <span className="header_optionLineTwo">und Bestellungen</span>
         </div>
+        </Link>
+
 
         <div className="header_option">
-          <span className="header_optionLineOne">Your</span>
+          <span className="header_optionLineOne">Entdecken Sie</span>
           <span className="header_optionLineTwo">Prime</span>
         </div>
         
