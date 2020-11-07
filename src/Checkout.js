@@ -1,39 +1,42 @@
-import React from 'react';
+import React from "react";
 import "./Checkout.css";
+import CheckoutProduct from "./CheckoutProduct";
+import { useStateValue } from "./StateProvider";
 import Subtotal from "./Subtotal";
 
+
 function Checkout() {
-    return (
-                <div className="checkout">
-                    <div className="checkout_left">
-                        <img className="checkout_ad" src="https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._VB423492668_.jpg" alt="Werbebanner!"
-                        />
-                        <div>
-                            <h2 className="checkout_title">
-                                Your Shopping Basket
-                            </h2>
-                            {/* BasketItem*/}
-                            {/* BasketItem*/}
-                            {/* BasketItem*/}
-                            {/* BasketItem*/}
-                            {/* BasketItem*/}
+  const [{ basket, user }, dispatch] = useStateValue();
 
-                        </div>
+  return (
+    <div className="checkout">
+      <div className="checkout_left">
+        <img
+          className="checkout_ad"
+          src="https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._VB423492668_.jpg"
+          alt="Werbebanner!"
+        />
+        <div>
+          <h3>Hello, {user != null ? user.email : '' }</h3>
+          <h2 className="checkout_title">Your Shopping Basket</h2>
 
-                    </div>
+          {basket.map((item) => (
+            <CheckoutProduct
+              id={item.id}
+              title={item.title}
+              image={item.image}
+              price={item.price}
+              rating={item.rating}
+            />
+          ))}
+        </div>
+      </div>
 
-                    <div className="checkout_right">
-                        <Subtotal>
-
-                        </Subtotal>
-
-                    
-                    </div>
-
-
-                 </div>
-             );
-
+      <div className="checkout__right">
+        <Subtotal />
+      </div>
+    </div>
+  );
 }
 
-export default Checkout
+export default Checkout;
